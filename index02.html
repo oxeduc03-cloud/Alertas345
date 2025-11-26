@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>¡ALERTA! Virus Detectado</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #b00020;
+        color: white;
+        text-align: center;
+        padding-top: 60px;
+    }
+    .alert-box {
+        background: #ffffff11;
+        padding: 30px;
+        border-radius: 10px;
+        width: 60%;
+        margin: auto;
+        border: 2px solid white;
+    }
+    .btn {
+        margin-top: 20px;
+        padding: 15px 30px;
+        background: yellow;
+        color: black;
+        font-size: 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    #educativo {
+        display: none;
+        margin-top: 40px;
+        background: #fff;
+        color: black;
+        padding: 20px;
+        border-radius: 10px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+</head>
+
+<body>
+    <div class="alert-box">
+        <h1>⚠ ALARMA: 5 virus detectados en su PC</h1>
+        <h2>Su navegación podría estar en riesgo.</h2>
+        <p>Chrome ha detectado actividad peligrosa.</p>
+
+        <h3>Tiempo restante: <span id="timer">27</span> segundos</h3>
+
+        <button class="btn" onclick="mostrarEducativo()">REPARAR AHORA</button>
+    </div>
+
+    <div id="educativo">
+        <h2>🔵 SIMULACIÓN EDUCATIVA</h2>
+        <p>
+            Esta es una falsa alerta de virus como las que aparecen en sitios maliciosos.
+            <br><br>
+            Si hubieras hecho clic en una alerta real:
+        </p>
+        <ul style="text-align:left;">
+            <li>Podrías descargar un virus real</li>
+            <li>Te pueden robar contraseñas</li>
+            <li>Pueden instalar programas falsos</li>
+            <li>Los estafadores pueden pedir acceso remoto a tu PC</li>
+        </ul>
+        <p>Chrome y Google <b>nunca muestran alertas así</b>.  
+           Esta página es solo una demostración segura para aprender ciberseguridad.</p>
+    </div>
+
+<script>
+    // ⏳ Temporizador falso
+    let tiempo = 27;
+    setInterval(() => {
+        if (tiempo > 0) {
+            tiempo--;
+            document.getElementById("timer").innerText = tiempo;
+        }
+    }, 1000);
+
+    // 🎓 Mostrar explicación educativa
+    function mostrarEducativo() {
+        document.getElementById("educativo").style.display = "block";
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+</script>
+
+</body>
+</html>
